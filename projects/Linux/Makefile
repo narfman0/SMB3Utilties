@@ -27,6 +27,7 @@ NDLLIB := $(NDLOBJPATH)NoDiceLib.a
 
 # NoDiceLib source and objects
 $(NDLOBJPATH)%.o: $(NDLSRCPATH)%.c
+	mkdir -p $(NDLOBJPATH)/M6502
 	$(GCC) -c $(CFLAGS) $(NDLSRCPATH)$*.c -o $(NDLOBJPATH)$*.o
 
 # NoDiceLib library
@@ -52,6 +53,7 @@ NDBIN := ../../bin/NoDice
 
 # NoDice source and objects
 $(NDOBJPATH)%.o: $(NDSRCPATH)%.c
+	mkdir -p $(NDOBJPATH)
 	$(GCC) -c $(CFLAGS) $(GTKCFLAGS) $(NDSRCPATH)$*.c -o $(NDOBJPATH)$*.o
 
 # NoDice binary
@@ -75,6 +77,7 @@ MCBIN := ../../bin/MusConv
 
 # MusConv source and objects
 $(MCOBJPATH)%.o: $(MCSRCPATH)%.c
+	mkdir -p $(MCOBJPATH)
 	$(GCC) -c $(CFLAGS) $(MCSRCPATH)$*.c -o $(MCOBJPATH)$*.o
 
 # MusConv binary
